@@ -1,11 +1,11 @@
-package org.opengravity.cohesion.extractor;
+package org.opengravity.jira.analyzer.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Issue {
 
-  private final List<String> components = new ArrayList<>();
+  private final Set<String> components = new HashSet<>();
   private String id;
 
   public String getId() {
@@ -16,7 +16,7 @@ public class Issue {
     this.id = id;
   }
 
-  public List<String> getComponents() {
+  public Set<String> getComponents() {
     return components;
   }
 

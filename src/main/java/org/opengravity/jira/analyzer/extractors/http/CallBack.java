@@ -1,4 +1,4 @@
-package org.opengravity.cohesion.extractor;
+package org.opengravity.jira.analyzer.extractors.http;
 
 public interface CallBack {
 

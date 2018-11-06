@@ -1,4 +1,4 @@
-package org.opengravity.cohesion.extractor;
+package org.opengravity.jira.analyzer.extractors.http;
 
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.api.SearchRestClient;
@@ -15,13 +15,15 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.opengravity.cohesion.Configuration;
+import org.opengravity.jira.analyzer.Configuration;
+import org.opengravity.jira.analyzer.api.Extractor;
+import org.opengravity.jira.analyzer.domain.Issue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IssuesExtractor implements CallBack {
+public class HttpExtractor implements CallBack, Extractor {
 
-  private static final Logger log = LoggerFactory.getLogger(IssuesExtractor.class);
+  private static final Logger log = LoggerFactory.getLogger(HttpExtractor.class);
 
   private final ScheduledExecutorService queueCheckTread;
   private final ExecutorService taskExecutor;
@@ -31,13 +33,14 @@ public class IssuesExtractor implements CallBack {
   private AtomicInteger taskRemain;
   private BooleanLatch completion = new BooleanLatch();
 
-  public IssuesExtractor(Configuration configuration) {
+  public HttpExtractor(Configuration configuration) {
     this.configuration = configuration;
     queueCheckTread = Executors.newSingleThreadScheduledExecutor();
     taskExecutor = Executors.newSingleThreadExecutor();
   }
 
-  public List<Issue> extract() throws JiraException {
+  @Override
+  public List<Issue> extract() throws CannotExtractIssuesException {
     prepareExtractionTasks();
     executeExtractionTasks();
     waitForCompletion();
@@ -71,7 +74,7 @@ public class IssuesExtractor implements CallBack {
     }
   }
 
-  private void prepareExtractionTasks() throws JiraException {
+  private void prepareExtractionTasks() throws CannotExtractIssuesException {
     int amount = calculateIssueAmount();
     log.info("There are {} issues", amount);
     taskRemain = new AtomicInteger(populateTaskQueue(amount));
@@ -97,14 +100,14 @@ public class IssuesExtractor implements CallBack {
     return tasks.size();
   }
 
-  private int calculateIssueAmount() throws JiraException {
+  private int calculateIssueAmount() throws CannotExtractIssuesException {
     final AsynchronousJiraRestClientFactory factory = new AsynchronousJiraRestClientFactory();
     final AnonymousAuthenticationHandler handler = new AnonymousAuthenticationHandler();
     try (JiraRestClient rest = factory.create(configuration.getUrl(), handler)) {
       SearchRestClient search = rest.getSearchClient();
       return search.searchJql("project=" + configuration.getProject()).claim().getTotal();
     } catch (Exception e) {
-      throw new JiraException(e);
+      throw new CannotExtractIssuesException(e);
     }
   }
 

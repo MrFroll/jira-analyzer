@@ -1,4 +1,4 @@
-package org.opengravity.cohesion;
+package org.opengravity.jira.analyzer;
 
 import java.net.URI;
 import java.net.URISyntaxException;

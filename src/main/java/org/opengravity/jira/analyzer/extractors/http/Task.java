@@ -1,4 +1,4 @@
-package org.opengravity.cohesion.extractor;
+package org.opengravity.jira.analyzer.extractors.http;
 
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.api.SearchRestClient;
@@ -12,13 +12,14 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.opengravity.cohesion.Configuration;
+import org.opengravity.jira.analyzer.Configuration;
+import org.opengravity.jira.analyzer.domain.Issue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Task implements Runnable {
 
-  private static final Logger log = LoggerFactory.getLogger(IssuesExtractor.class);
+  private static final Logger log = LoggerFactory.getLogger(HttpExtractor.class);
 
   private final List<Issue> issues = new ArrayList<>();
   private int position;
@@ -32,12 +33,12 @@ public class Task implements Runnable {
     this.configuration = configuration;
   }
 
-  public List<Issue> getIssues() {
-    return issues;
-  }
-
   public static Task of(int startPosition, Configuration configuration, CallBack callBack) {
     return new Task(startPosition, configuration, callBack);
+  }
+
+  public List<Issue> getIssues() {
+    return issues;
   }
 
   @Override
