@@ -9,7 +9,7 @@ import org.opengravity.jira.analyzer.core.Extractor;
 import org.opengravity.jira.analyzer.core.domain.Issue;
 import org.opengravity.jira.analyzer.core.CannotExtractIssuesException;
 import org.opengravity.jira.analyzer.core.CannotExportGraphException;
-import org.opengravity.jira.analyzer.graph.CohesionGraph;
+import org.opengravity.jira.analyzer.cohesion.graph.CohesionGraph;
 import org.opengravity.jira.analyzer.loader.CannotLoadException;
 import org.opengravity.jira.analyzer.core.IssueLoader;
 

@@ -1,4 +1,4 @@
-package org.opengravity.jira.analyzer.graph;
+package org.opengravity.jira.analyzer.cohesion.graph;
 
 import org.junit.After;
 import org.junit.Assert;

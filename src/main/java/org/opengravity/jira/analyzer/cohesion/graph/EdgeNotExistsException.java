@@ -1,4 +1,4 @@
-package org.opengravity.jira.analyzer.graph;
+package org.opengravity.jira.analyzer.cohesion.graph;
 
 public class EdgeNotExistsException extends RuntimeException {
 
