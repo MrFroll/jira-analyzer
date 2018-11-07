@@ -36,7 +36,7 @@ public class CohesionGraph {
     }
   }
 
-  public void build(List<Issue> issues) {
+  public void buildAndWeight(List<Issue> issues) {
     initializeObjectFields(issues);
     createVertexes();
     createEdges();

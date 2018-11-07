@@ -25,7 +25,7 @@ public class IssueHolder {
   }
 
   protected void buildGraph() {
-    cohesionGraph.build(issues);
+    cohesionGraph.buildAndWeight(issues);
   }
 
   protected double weight(String s, String s1) {

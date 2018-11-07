@@ -27,7 +27,7 @@ public class CohesionAnalyzer implements Analyzer {
       final List<Issue> issues = extractor.extract();
       issueLoader.load(issues);
       CohesionGraph cohesionGraph = new CohesionGraph();
-      cohesionGraph.build(issues);
+      cohesionGraph.buildAndWeight(issues);
       cohesionGraph.exportToGraphML(config);
 
     } catch (CannotExtractIssuesException | CannotExportGraphException | CannotLoadException e) {
