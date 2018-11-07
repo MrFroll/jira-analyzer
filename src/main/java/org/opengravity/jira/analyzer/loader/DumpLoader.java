@@ -8,7 +8,8 @@ import java.util.List;
 import javax.inject.Inject;
 import org.apache.commons.io.FileUtils;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.IssueLoader;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 
 public class DumpLoader implements IssueLoader {
 

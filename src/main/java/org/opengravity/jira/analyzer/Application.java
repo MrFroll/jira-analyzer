@@ -2,7 +2,7 @@ package org.opengravity.jira.analyzer;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import org.opengravity.jira.analyzer.cohesion.CannotAnalyzeException;
+import org.opengravity.jira.analyzer.core.CannotAnalyzeException;
 import org.opengravity.jira.analyzer.cohesion.CohesionAnalyzer;
 import org.opengravity.jira.analyzer.cohesion.CohesionInjector;
 import org.opengravity.jira.analyzer.cohesion.Mode;

@@ -2,7 +2,7 @@ package org.opengravity.jira.analyzer.graph;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 
 public class IssueHolder {
 

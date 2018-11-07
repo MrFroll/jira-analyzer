@@ -13,7 +13,8 @@ import org.jgrapht.graph.SimpleWeightedGraph;
 import org.jgrapht.io.ExportException;
 import org.jgrapht.io.GraphMLExporter;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.CannotExportGraphException;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 
 public class CohesionGraph {
 

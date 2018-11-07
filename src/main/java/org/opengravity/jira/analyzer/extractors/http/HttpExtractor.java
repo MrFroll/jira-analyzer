@@ -16,8 +16,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.api.Extractor;
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.CannotExtractIssuesException;
+import org.opengravity.jira.analyzer.core.Extractor;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

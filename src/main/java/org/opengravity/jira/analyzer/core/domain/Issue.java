@@ -1,4 +1,4 @@
-package org.opengravity.jira.analyzer.domain;
+package org.opengravity.jira.analyzer.core.domain;
 
 import java.util.HashSet;
 import java.util.Set;

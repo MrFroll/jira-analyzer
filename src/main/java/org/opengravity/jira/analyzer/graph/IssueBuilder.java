@@ -1,6 +1,6 @@
 package org.opengravity.jira.analyzer.graph;
 
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 
 public class IssueBuilder {
 

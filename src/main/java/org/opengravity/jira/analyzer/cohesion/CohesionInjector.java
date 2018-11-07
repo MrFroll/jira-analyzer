@@ -2,10 +2,10 @@ package org.opengravity.jira.analyzer.cohesion;
 
 import com.google.inject.AbstractModule;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.api.Extractor;
+import org.opengravity.jira.analyzer.core.Extractor;
 import org.opengravity.jira.analyzer.extractors.FileOrHttpExtractor;
 import org.opengravity.jira.analyzer.loader.DumpLoader;
-import org.opengravity.jira.analyzer.loader.IssueLoader;
+import org.opengravity.jira.analyzer.core.IssueLoader;
 
 public class CohesionInjector extends AbstractModule {
 

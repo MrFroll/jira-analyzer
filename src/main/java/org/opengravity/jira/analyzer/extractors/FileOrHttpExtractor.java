@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.List;
 import javax.inject.Inject;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.api.Extractor;
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.Extractor;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 import org.opengravity.jira.analyzer.extractors.file.FileExtractor;
-import org.opengravity.jira.analyzer.extractors.http.CannotExtractIssuesException;
+import org.opengravity.jira.analyzer.core.CannotExtractIssuesException;
 import org.opengravity.jira.analyzer.extractors.http.HttpExtractor;
 
 public class FileOrHttpExtractor implements Extractor {

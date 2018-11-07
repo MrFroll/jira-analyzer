@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.api.Extractor;
-import org.opengravity.jira.analyzer.domain.Issue;
-import org.opengravity.jira.analyzer.extractors.http.CannotExtractIssuesException;
+import org.opengravity.jira.analyzer.core.Extractor;
+import org.opengravity.jira.analyzer.core.domain.Issue;
+import org.opengravity.jira.analyzer.core.CannotExtractIssuesException;
 
 public class FileExtractor implements Extractor {
 

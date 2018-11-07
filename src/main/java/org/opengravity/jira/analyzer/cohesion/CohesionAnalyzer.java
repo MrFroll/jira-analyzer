@@ -2,15 +2,16 @@ package org.opengravity.jira.analyzer.cohesion;
 
 import java.util.List;
 import javax.inject.Inject;
-import org.opengravity.jira.analyzer.Analyzer;
+import org.opengravity.jira.analyzer.core.Analyzer;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.api.Extractor;
-import org.opengravity.jira.analyzer.domain.Issue;
-import org.opengravity.jira.analyzer.extractors.http.CannotExtractIssuesException;
-import org.opengravity.jira.analyzer.graph.CannotExportGraphException;
+import org.opengravity.jira.analyzer.core.CannotAnalyzeException;
+import org.opengravity.jira.analyzer.core.Extractor;
+import org.opengravity.jira.analyzer.core.domain.Issue;
+import org.opengravity.jira.analyzer.core.CannotExtractIssuesException;
+import org.opengravity.jira.analyzer.core.CannotExportGraphException;
 import org.opengravity.jira.analyzer.graph.CohesionGraph;
 import org.opengravity.jira.analyzer.loader.CannotLoadException;
-import org.opengravity.jira.analyzer.loader.IssueLoader;
+import org.opengravity.jira.analyzer.core.IssueLoader;
 
 public class CohesionAnalyzer implements Analyzer {
 

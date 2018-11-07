@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.opengravity.jira.analyzer.Configuration;
-import org.opengravity.jira.analyzer.domain.Issue;
+import org.opengravity.jira.analyzer.core.domain.Issue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
